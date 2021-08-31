@@ -12,8 +12,8 @@
             </div>
             <br>
             <div>
-                <button class="btn btn-sm btn-info">sign Up</button>
-                <button class="btn btn-sm btn-success mx-2">switch to Login</button>
+                <button class="btn btn-sm btn-info" type="submit">{{ isLoginMode ? 'Login' : 'Sign Up'}}</button>
+                <button class="btn btn-sm btn-success mx-2" type="button" (click)="onSwitchMode()">switch to {{isLoginMode ? 'Sign Up':'Login'}}</button>
                 
             </div>
             
