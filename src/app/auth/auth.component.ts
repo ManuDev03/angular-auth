@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import {NgForm} from '@angular/forms'
 import { Router } from '@angular/router';
-import { Observable, Subject } from 'rxjs';
+import { Observable, Subject,Subscription } from 'rxjs';
 import { AuthResponseData, AuthService } from './auth.service';
 import { User } from './user.model'
 
@@ -17,10 +17,15 @@ export class AuthComponent implements OnInit {
   isLoading = false
   error:string = null
 
+  ngOnInit(): void {
+    
+    }
+  
+
+
   constructor(private auth_service:AuthService, private router:Router) { }
 
-  ngOnInit(): void {
-  }
+
  onSwitchMode(){
    this.isLoginMode = !this.isLoginMode
  }
@@ -60,6 +65,7 @@ export class AuthComponent implements OnInit {
  
   form.reset()
  }
+
 
 
 }
